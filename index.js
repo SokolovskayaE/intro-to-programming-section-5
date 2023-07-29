@@ -29,6 +29,14 @@ function checkGuess() {
 
   hideAllMessages();
 
+  if (isNaN(guess) || !Number.isInteger(guess)) {
+    displayErrorMessage(
+      numberOfGuessesMessage,
+      "Please enter a valid integer.",
+      true
+    );
+    return;
+  }
   if (guess <= 0) {
     displayErrorMessage(
       numberOfGuessesMessage,
